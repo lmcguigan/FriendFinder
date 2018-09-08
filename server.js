@@ -5,10 +5,8 @@ var app = express();
 require("./app/routing/htmlRoutes.js")(app);
 require("./app/routing/apiRoutes.js")(app);
 
-var PORT = 8000;
-
 app.use(express.static(path.join(__dirname + "/app/public")));
 
-app.listen(PORT, function () {
+app.listen(process.env.PORT || 5000, function () {
     console.log("App listening on PORT " + PORT);
 });

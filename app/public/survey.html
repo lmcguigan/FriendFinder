@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container holder">
+        <div class="jumbotron">
+            <h1 class="display-4">FriendFinder</h1>
+            <p class="lead">Find your new bff.</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a href="/"><button class="btn btn-info btn-lg"><span class="fa fa-home"></span> Home</button></a>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="panel-title"><strong>Survey</strong></h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <form method="POST" role="form">
+                        <div class="form-row noheight">
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="name"><p><b>Name:</b></p></label>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="photoURL"><p><b>Photo URL:</b></p></label>
+                                <input type="text" id="photo">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="question1" class="highlabel"><p><b>Question 1: </b>Your mind is always buzzing
+                                        with unexplored ideas and plans.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question1">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p><b>My response: </b><span id="q1response" class="response"></span></p>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="question2" class="highlabel"><p><b>Question 2: </b>Generally speaking, you rely
+                                        more on your experience than your imagination.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question2">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q2response" class="response"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="question3" class="highlabel"><p><b>Question 3: </b>You find it easy to stay relaxed
+                                        and focused even when there is some pressure.
+                                    </p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question3">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q3response" class="response"></span></p>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-12 col-md-6">
+                                <label for="question4" class="highlabel"><p><b>Question 4: </b>You rarely do something just
+                                        out of sheer curiosity.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question4">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q4response" class="response"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question5" class="highlabel"><p><b>Question 5: </b>People can rarely upset you.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question5">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q5response" class="response"></span></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question6" class="highlabel"><p><b>Question 6: </b>It is often difficult for
+                                        you to relate to other people’s feelings.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question6">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q6response" class="response"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question7" class="highlabel"><p><b>Question 7: </b>Your mind is always buzzing
+                                        with unexplored ideas and plans.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question7">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q7response" class="response"></span></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question8" class="highlabel"><p><b>Question 8: </b>Generally speaking, you rely
+                                        more on your experience than your imagination.</p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question8">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q8response" class="response"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question9" class="highlabel"><p><b>Question 9: </b>You find it easy to stay relaxed
+                                        and focused even when there is some pressure.
+                                    </p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question9">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q9response" class="response"></span></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <label for="question10" class="highlabel"><p><b>Question 10: </b>You rarely do something
+                                        just out of sheer curiosity.
+                                    </p></label>
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="5" value="3" class="slider slider-gradient" id="question10">
+                                    <div class="num-holder">
+                                        <div class="num-label">1</div>
+                                        <div class="num-label">2</div>
+                                        <div class="num-label">3</div>
+                                        <div class="num-label">4</div>
+                                        <div class="num-label">5</div>
+                                    </div>
+                                    <p>My response: <span id="q10response" class="response"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row lineup">
+                    <div class="form-group col-12 justify-content-center" id="submitholder">
+                        <button class="btn btn-info" id="submit-btn">Submit!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="match" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="introtext">Here's your best match:</p>
+                <p id="matchname"></p>
+                <img id="matchpic">
+                <p id="percentmatch"></p>
+            </div>
+        </div>
+        <div id="missinginput" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="introtext">Please make sure to enter your name before submitting.</p>
+            </div>
+        </div>
+        <a href="api/users">Friends API</a> |
+        <a href="https://github.com/lmcguigan/friendfinder">Github Repo</a>
+    </div>
+    <script type="text/javascript">
+        $(".close").click(function () {
+            $(this).parents(".modal").css("display", "none");
+        });
+        $(".slider").on("input", function (e) {
+            var chosen = $(e.target).val();
+            if (chosen === "1") {
+                $(this).siblings("p").find(".response").text("1 - Strongly Disagree")
+            }
+            else if (chosen === "2") {
+                $(this).siblings("p").find(".response").text("2 - Somewhat Disagree")
+            }
+            else if (chosen === "3") {
+                $(this).siblings("p").find(".response").text("3 - Neither Agree nor Disagree")
+            }
+            else if (chosen === "4") {
+                $(this).siblings("p").find(".response").text("4 - Somewhat Agree")
+            }
+            else if (chosen === "5") {
+                $(this).siblings("p").find(".response").text("5 - Strongly Agree")
+            }
+        });
+        $(".slider").trigger("input");
+
+        //submit button posts to users API
+        $("#submit-btn").on("click", function (event) {
+            event.preventDefault();
+            var newUser = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    parseInt($("#question1").val()),
+                    parseInt($("#question2").val()),
+                    parseInt($("#question3").val()),
+                    parseInt($("#question4").val()),
+                    parseInt($("#question5").val()),
+                    parseInt($("#question6").val()),
+                    parseInt($("#question7").val()),
+                    parseInt($("#question8").val()),
+                    parseInt($("#question9").val()),
+                    parseInt($("#question10").val())
+                ]
+            };
+            console.log(newUser);
+            if ($("#name").val() === "") {
+                $("#missinginput").css("display", "flex");
+            }
+            else {
+                $.post("/api/users", newUser)
+                    .then(function (data) {
+                        console.log(data);
+                        $("#matchname").text("Name: " + data.name);
+                        $("#matchpic").attr("src", data.photo);
+                        $("#percentmatch").text("Percent Match: " + data.percentMatch);
+                        $("#match").css("display", "flex");
+                    });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
